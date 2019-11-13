@@ -3,14 +3,18 @@ require_once('costanti.php') ;
 
  function getNumeroCasuale ($dimensioneArray) {
     $array = [];
-    for ($i=0; $i < $dimensioneArray ; $i++) { 
-      $numeroCasuale  =  rand(0,90) ;
-      if (isNumeroPresente($numeroCasuale,$array)) {
-          $array[$i] = $numeroCasuale ;
-      }else { 
-        $i-- ; 
-      }
+   $a=0;
+    while ($a < $dimensioneArray) {  
+      $numeroCasuale  =  rand(1,90) ;
+
+      
+     
+          $array[$a] = $numeroCasuale ;
+          $a++ ;
+    
+     
     }
+    return $array ;
 
  }
 
@@ -21,3 +25,7 @@ require_once('costanti.php') ;
        if ($numeroCorrente == $numeriPrecedenti[$i]) {
            return True;
        }
+       
+      }
+      return false ;
+    }

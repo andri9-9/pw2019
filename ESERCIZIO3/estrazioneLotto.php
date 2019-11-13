@@ -1,6 +1,8 @@
 <?php
 require_once('costanti.php') ;
-require_once('funzioni.php') ; ?>
+require_once('funzioni.php') ; 
+require('database.php') ;
+?>
 
 
 
@@ -29,23 +31,23 @@ require_once('funzioni.php') ; ?>
     <thead class="thead-dark">
       <tr>
     
-        <th scope="col">ESTRAZIONE DEL LOTTO</th>
+        <!-- <th scope="col">ESTRAZIONE DEL LOTTO</th> -->
        
       </tr>
     </thead>
     <tbody>
-        <?php for ($i=0; $i <= count($citta) ; $i++) { ?>
-            
-        
+        <?php for ($i=0; $i < count($citta) ; $i++) { ?>
+               
       <tr>
-        <th scope="row"><?$citta[$i]?></th>
-        <?php for ($index=0; $index <= NUMERIESTRAIBILI ; $index++) { ?>
+
+        <th scope="row"><?=$citta[$i]?></th>
+        <?php for ($index=0; $index < NUMERIESTRAIBILI ; $index++) { ?>
 
 
-            <td> <?=$estrazione[$index]?> </td> 
+            <td> <?=$estrazione[$i][$index]?> </td> 
 
 
-        }
+       <?php } ?>
         
       
 
