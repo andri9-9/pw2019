@@ -7,16 +7,17 @@ require_once('costanti.php') ;
     while ($a < $dimensioneArray) {  
       $numeroCasuale  =  rand(1,90) ;
 
-      
-     
-          $array[$a] = $numeroCasuale ;
+      if (!isNumeroPresente($numeroCasuale,$array)) {
+         $array[$a] = $numeroCasuale ;
           $a++ ;
+      }
+     
+         
     
      
     }
     return $array ;
-
- }
+   }
 
 
  function isNumeroPresente( $numeroCorrente, $numeriPrecedenti) {
@@ -28,4 +29,4 @@ require_once('costanti.php') ;
        
       }
       return false ;
-    }
+   }
